@@ -20,7 +20,7 @@ namespace Calculator.Domain.UseCase
             _calculator = new CalculatorBusinessRule();
         }
 
-        async void IUseCase.Begin()
+        public async void Begin()
         {
             var init = await _repository.GetStateAsync();
             _presenter.SetText($"{init}");
@@ -52,7 +52,7 @@ namespace Calculator.Domain.UseCase
                 .AddTo(_disposables);
         }
 
-        void IUseCase.Finish()
+        public void Finish()
         {
             _disposables.Dispose();
         }

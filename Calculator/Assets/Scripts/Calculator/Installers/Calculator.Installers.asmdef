@@ -1,0 +1,21 @@
+{
+    "name": "Calculator.Installers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e51d0729a6118e547830139fba79ef7f",
+        "GUID:fac1cbc615849fe4e8109f9aecacb2eb",
+        "GUID:af7c173f773b5dd40b059ce5b25b208b",
+        "GUID:3cff23a8e71db63488c8572bf7c3154b",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:7bb5bb58a698b3645942a06bdec961cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

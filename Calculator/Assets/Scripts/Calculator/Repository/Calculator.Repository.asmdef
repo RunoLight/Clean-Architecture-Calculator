@@ -1,0 +1,19 @@
+{
+    "name": "Calculator.Repository",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e51d0729a6118e547830139fba79ef7f",
+        "GUID:fac1cbc615849fe4e8109f9aecacb2eb",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:7bb5bb58a698b3645942a06bdec961cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
