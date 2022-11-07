@@ -1,6 +1,7 @@
 ﻿namespace CleanArchitecturePattern
 {
-    public interface IUseCase {
+    public interface IUseCase
+    {
         void Begin();
         void Finish();
     }

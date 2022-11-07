@@ -5,14 +5,13 @@ using Calculator.Repository;
 using Calculator.Repository.DataStore;
 using UnityEngine;
 using Zenject;
-using IInstaller = Calculator.Installers.IInstaller;
 
 namespace Calculator.Installers
 {
-    public class TestInstaller : MonoInstaller, IInstaller
+    public class CalculatorInstaller : MonoInstaller, IInstaller
     {
-        [SerializeField] CalculatorView view = default;
-    
+        [SerializeField] private CalculatorView view = default;
+
         public override void InstallBindings()
         {
             Container
@@ -24,9 +23,10 @@ namespace Calculator.Installers
                 .FromInstance(new CalculatorRepository(new PlayerPrefsCalculatorDataStore()))
                 .AsCached();
         }
-    
+
         [ContextMenu("Reset data")]
-        private void ClearPersistentSessionData() {
+        private void ClearPersistentSessionData()
+        {
             PlayerPrefs.DeleteKey(PlayerPrefsCalculatorDataStore.Key);
         }
     }

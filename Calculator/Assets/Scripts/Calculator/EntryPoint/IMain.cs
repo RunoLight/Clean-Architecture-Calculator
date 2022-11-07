@@ -1,5 +1,6 @@
-﻿
-namespace Calculator {
-    public interface IMain {
+﻿namespace Calculator.EntryPoint
+{
+    public interface IMain
+    {
     }
 }

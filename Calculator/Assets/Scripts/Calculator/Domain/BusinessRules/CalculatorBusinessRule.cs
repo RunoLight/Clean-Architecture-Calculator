@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Calculator.ValueObjects;
-using UnityEngine;
 
 namespace Calculator.Domain.BusinessRules
 {
@@ -8,38 +7,32 @@ namespace Calculator.Domain.BusinessRules
     {
         private readonly char[] _allowedCharacters =
         {
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7',
-            '8',
-            '9',
-            '0',
-            '+'
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+'
         };
 
         private const string ErrorMessage = "Error";
 
-        public string TryCalculate(CalculatorValueObject count)
+        /// <summary>
+        /// Validates current state, then calculates if validated, send error message otherwise
+        /// </summary>
+        /// <returns> New current state of value object </returns>
+        public string TryCalculate(CalculatorValueObject vo)
         {
-            var validated = count.State.All(c => _allowedCharacters.Contains(c)) &&
-                            string.IsNullOrEmpty(count.State) == false &&
-                            string.IsNullOrWhiteSpace(count.State) == false &&
-                            count.State.Split('+').All(numString => numString.Length != 0);
-            
+            var validated = vo.State.All(c => _allowedCharacters.Contains(c)) &&
+                            string.IsNullOrEmpty(vo.State) == false &&
+                            string.IsNullOrWhiteSpace(vo.State) == false &&
+                            vo.State.Split('+').All(numString => numString.Length != 0);
+
             if (validated)
             {
-                count.Calculate();
+                vo.Calculate();
             }
             else
             {
-                count.SetMessage(ErrorMessage);
+                vo.SetMessage(ErrorMessage);
             }
 
-            return count.State;
+            return vo.State;
         }
 
         public string SetText(CalculatorValueObject count, string text)
